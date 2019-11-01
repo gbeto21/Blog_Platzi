@@ -1,6 +1,32 @@
 import React from 'react'
 
 const App = () => {
+
+  const ponerFilas = () => [
+    <tr>
+      <td>
+        Rodolfo
+      </td>
+      <td>
+        Rodolfo@saldivar.com
+      </td>
+      <td>
+        Rodolfo.com
+      </td>
+    </tr>,
+    <tr>
+      <td>
+        Platzi
+      </td>
+      <td>
+        Platzi@saldivar.com
+      </td>
+      <td>
+        Platzi.com
+      </td>
+    </tr>
+  ]
+
   return (
     <div className='margen'>
 
@@ -13,28 +39,7 @@ const App = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              Rodolfo
-        </td>
-            <td>
-              Rodolfo@saldivar.com
-        </td>
-            <td>
-              Rodolfo.com
-        </td>
-          </tr>
-          <tr>
-            <td>
-              Platzi
-        </td>
-            <td>
-              Platzi@saldivar.com
-        </td>
-            <td>
-              Platzi.com
-        </td>
-          </tr>
+          {ponerFilas()}
         </tbody>
       </table>
     </div>
