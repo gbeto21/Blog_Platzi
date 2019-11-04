@@ -11,8 +11,8 @@ import reducers from './reducers'
 
 const store = createStore(
     reducers, //Todos los reduers
-    {},
-    applyMiddleware(reduxThunk) //Estado inicial
+    {}, //Estado inicial
+    applyMiddleware(reduxThunk)
 )
 
 ReactDOM.render(
