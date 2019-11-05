@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as usuariosActions from '../../actions/usuariosActions'
 import Spinner from '../general/Spinner'
+import Fata from '../general/Fatal'
+import Fatal from '../general/Fatal'
 
 class Usuarios extends Component {
 
@@ -15,6 +17,10 @@ class Usuarios extends Component {
 
     if (this.props.cargando) {
       return <Spinner />
+    }
+
+    if (this.props.error) {
+      return <Fatal mensaje={this.props.error} />
     }
 
     return (
