@@ -8,7 +8,8 @@ import Fatal from '../general/Fatal'
 class Usuarios extends Component {
 
   componentDidMount() {
-    this.props.traerTodos()
+    if (!this.props.usuarios.length)
+      this.props.traerTodos()
   }
 
   ponerContenido = () => {
