@@ -22,6 +22,14 @@ export const traerTodos = () => async (dispatch) => {
 
 }
 
-// dispatch({
-//     type: CARGANDO
-// })
+export const traerPorUsuario = (key) => async (dispatch, getState) => {
+    const { usuarios } = getState().usuariosReducer;
+    const usuario_id = usuarios[key].id
+
+    const respuesta = await axios.get(`http://jsonplaceholder.typicode.com/posts?userId=${usuario_id}`)
+
+    dispatch({
+        type: TRAER_TODOS,
+        payload: respuesta.data
+    })
+}
