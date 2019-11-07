@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { TRAER_TODOS, CARGANDO, ERROR } from '../types/publicacionesTypes'
+
 
 export const traerTodos = () => async (dispatch) => {
 
@@ -6,14 +8,14 @@ export const traerTodos = () => async (dispatch) => {
         const respuesta = await axios.get('http://jsonplaceholder.typicode.com/posts')
 
         dispatch({
-            type: 'TRAER_TODOS',
+            type: TRAER_TODOS,
             payload: respuesta.data
         })
     }
     catch (error) {
         console.log('Error: ', error.message)
         dispatch({
-            // type: ERROR,
+            type: ERROR,
             payload: 'Algo salió mal, intente más tarde.'
         })
     }
