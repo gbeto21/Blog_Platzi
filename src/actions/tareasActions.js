@@ -28,7 +28,7 @@ export const traerTodas = () => async (dispatch) => {
         })
     }
     catch (error) {
-        console.log('Error: ', error.message)
+        console.log('Error tareas: ', error.message)
         dispatch({
             type: ERROR,
             payload: 'Información de tareas no disponible.'
