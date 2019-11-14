@@ -4,14 +4,16 @@ import { bindActionCreators } from "redux";
 const INITIAL_STATE = {
     tareas: {},
     cargando: false,
-    error: ''
+    error: '',
+    usuario_id: '',
+    titulo: ''
 }
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case TRAER_TODAS:
             return {
-                ...state, 
+                ...state,
                 tareas: action.payload,
                 cargando: false,
                 error: ''
@@ -23,6 +25,11 @@ export default (state = INITIAL_STATE, action) => {
         case ERROR:
             return { ...state, error: action.payload, cargando: false }
 
+        case 'cambio_usuario_id':
+            return { ...state, usuario_id: action.payload }
+
+        case 'cambio_titulo':
+            return { ...state, titulo: action.payload }
 
         default: return state;
     }
