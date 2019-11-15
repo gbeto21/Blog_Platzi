@@ -14,6 +14,7 @@ const App = () => (
       <Route exact path='/tareas' component={Tareas}></Route>
       <Route exact path='/publicaciones/:key' component={Publicaciones}></Route>
       <Route exact path='/tareas/guardar' component={TareasGuardar}></Route>
+      <Route exact path='/tareas/guardar/:usu_id/:tar_id' component={TareasGuardar}></Route>
 
     </div>
   </BrowserRouter>
